@@ -25,7 +25,15 @@
 		</p>
 		<p>
 			<i class="fab fa-facebook-f"></i> {% if artist.facebook_link %}<a href="{{ artist.facebook_link }}" target="_blank">{{ artist.facebook_link }}</a>{% else %}No Facebook Link{% endif %}
-        </p>
+		</p>
+		<section>
+			<form class="form" method="post" action="/artists/{{artist.id}}">
+				<div class="form-group">
+					<a class="btn btn-primary btn-lg" href="/artists/{{artist.id}}/edit">Edit Artist</a>
+					<input class="mt-10 btn btn-danger btn-lg" type="submit" value="Delete Artist">
+				</div>
+			</form>
+		</section>
 		{% if artist.seeking_venue %}
 		<div class="seeking">
 			<p class="lead">Currently seeking performance venues</p>

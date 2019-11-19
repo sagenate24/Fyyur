@@ -29,6 +29,14 @@
 		<p>
 			<i class="fab fa-facebook-f"></i> {% if venue.facebook_link %}<a href="{{ venue.facebook_link }}" target="_blank">{{ venue.facebook_link }}</a>{% else %}No Facebook Link{% endif %}
 		</p>
+		<section>
+			<form class="form" method="post" action="/venues/{{venue.id}}">
+				<div class="form-group">
+					<a class="btn btn-primary btn-lg" href="/venues/{{venue.id}}/edit">Edit Venue</a>
+					<input class="mt-10 btn btn-danger btn-lg" type="submit" value="Delete Venue">
+				</div>
+			</form>
+		</section>
 		{% if venue.seeking_talent %}
 		<div class="seeking">
 			<p class="lead">Currently seeking talent</p>
