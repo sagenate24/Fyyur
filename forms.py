@@ -118,7 +118,7 @@ class VenueForm(FlaskForm):
         choices=genres_choices
     )
     website = StringField(
-        'website'
+        'website', validators=[URL()]
     )
     facebook_link = StringField(
         'facebook_link', validators=[URL()]
@@ -154,7 +154,7 @@ class ArtistForm(FlaskForm):
         choices=genres_choices
     )
     website = StringField(
-        'website'
+        'website', validators=[URL()]
     )
     facebook_link = StringField(
         # TODO implement enum restriction
